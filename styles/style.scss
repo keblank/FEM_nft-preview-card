@@ -1,0 +1,162 @@
+/* VARIABLES */
+$primary-font: "Outfit", sans-serif;
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$dark-blue-main: hsl(217, 54%, 11%);
+$darkblue-card: hsl(216, 50%, 16%);
+$dark-blue-line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+$space: 1.6rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $primary-font;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  height: 100vh;
+  background-color: $dark-blue-main;
+  color: $soft-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  width: 32rem;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  background-color: $darkblue-card;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+/* ELEMENTS */
+
+.image__container {
+  position: relative;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: $space;
+    display: block;
+  }
+
+  &--overlay {
+    position: absolute;
+    border-radius: 6px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: hsla(178, 100%, 50%, 0.6);
+
+    .icon-view {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+
+  &:hover .image__container--overlay {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: $white;
+  margin-bottom: $space;
+
+  &:hover {
+    color: $cyan;
+    cursor: pointer;
+  }
+}
+
+p {
+  margin-bottom: $space;
+}
+
+.stats {
+  margin-bottom: $space;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+
+  svg {
+    margin-right: 0.5rem;
+  }
+
+  &__ethereum {
+    display: flex;
+    align-items: center;
+
+    &__desc {
+      color: $cyan;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__countdown {
+    display: flex;
+    align-items: center;
+    text-align: right;
+  }
+}
+
+.author {
+  font-size: 1.4rem;
+  font-weight: 400;
+  border-top: 1px solid $dark-blue-line;
+  padding-top: $space;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: auto;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: $space;
+  }
+
+  &__name {
+    color: $white;
+
+    &:hover {
+      color: $cyan;
+      cursor: pointer;
+    }
+  }
+}
